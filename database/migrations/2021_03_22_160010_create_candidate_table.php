@@ -15,16 +15,16 @@ class CreateCandidateTable extends Migration
     {
         Schema::create('candidate', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('contact_number');
-            $table->integer('gender');
-            $table->string('specialization');
-            $table->integer('work_ex_year');
-            $table->integer('candidate_dob');
-            $table->longText('address');
-            $table->string('resume');
+            $table->string('first_name', 40)->nullable();
+            $table->string('last_name', 40)->nullable();
+            $table->string('email', 100)->nullable();
+            $table->string('contact_number', 100)->nullable();
+            $table->enum('gender', ['Male', 'Female'])->nullable();
+            $table->string('specialization', 200)->nullable();
+            $table->integer('work_ex_year', 30)->nullable();
+            $table->integer('candidate_dob')->nullable();
+            $table->longText('address', 500)->nullable();
+            $table->string('resume', 100)->nullable();
             $table->timestamps();
         });
     }
