@@ -21,7 +21,7 @@ class CreateCandidateTable extends Migration
             $table->string('contact_number', 100)->nullable();
             $table->enum('gender', ['Male', 'Female'])->nullable();
             $table->string('specialization', 200)->nullable();
-            $table->integer('work_ex_year', 30)->nullable();
+            $table->integer('work_ex_year')->nullable();
             $table->integer('candidate_dob')->nullable();
             $table->longText('address', 500)->nullable();
             $table->string('resume', 100)->nullable();
